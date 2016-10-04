@@ -5,7 +5,7 @@ var fs = require('fs');
 var hooks = {
   afterEditorFormBlocks: function (blocks, json, abe) {
     var rex = /\{\{\{i18nAbe(.*?)lang \'(.*?)\'\}\}\}/g
-    var tpl = abe.getTemplate(json.abe_meta.template);
+    var tpl = abe.cmsTemplate.template.getTemplate(json.abe_meta.template);
     var matches = tpl.match(rex);
     if(matches){
       var index = 0;
