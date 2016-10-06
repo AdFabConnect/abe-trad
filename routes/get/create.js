@@ -11,7 +11,7 @@ var route = function route(req, res, next, abe) {
 	json[key] = value;
 
 	fse.writeJson(jsonPath, json, function () {
-		abe.Locales.instance._reloadLocales();
+		abe.coreUtils.locales.instance._reloadLocales();
 		setTimeout(function () {
 			res.setHeader('Content-Type', 'application/json');
 			res.send(JSON.stringify({'msg': 'done !'}));
