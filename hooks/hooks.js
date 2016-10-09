@@ -12,7 +12,7 @@ var hooks = {
       var index = 0;
       var isAlreadyAdded = [];
       blocks['i18n'] = {};
-      var jsonData = abe.FileParser.getJson(path.join(abe.config.root, 'locales', json.lang + '.json'));
+      var jsonData = abe.cmsData.file.get(path.join(abe.config.root, 'locales', json.lang + '.json'));
       matches.forEach(function (match) {
         var value = match.replace(rex, '$2').replace(/\\'/g, "'");
         if(isAlreadyAdded.indexOf(value) < 1) {

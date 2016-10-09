@@ -8,7 +8,7 @@ var route = function route(req, res, next, abe) {
 	var key = decodeURIComponent(req.query.k);
 	var value = decodeURIComponent(req.query.v);
 	var jsonPath = path.join(abe.config.root, 'locales', lang + '.json');
-	var json = abe.FileParser.getJson(jsonPath)
+	var json = abe.cmsData.file.get(jsonPath)
 	json[key] = value;
 
 	fse.writeJson(jsonPath, json, function () {
