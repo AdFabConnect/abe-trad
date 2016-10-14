@@ -23,7 +23,7 @@ var hooks = {
             "desc": value,
             "maxLength": "",
             "tab": "i18n",
-            "placeholder": "",
+            "placeholder": value,
             "value": jsonData[value],
             "source": null,
             "display": "",

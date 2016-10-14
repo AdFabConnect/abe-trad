@@ -4,7 +4,7 @@ var Trad = function (el) {
 	this.el = el;
 	this.input = el.querySelector('.form-abe');
 	this.label = el.querySelector('label');
-	this.labelText = this.label.textContent.trim();
+	this.labelText = this.input.getAttribute('placeholder');
 
 	this.bindEvt();
 };
