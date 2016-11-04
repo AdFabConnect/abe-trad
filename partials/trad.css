@@ -1,0 +1,4 @@
+
+#abeForm:not(.role-admin) #i18n.tab-pane {
+  display: none;
+}

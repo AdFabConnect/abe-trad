@@ -2,6 +2,7 @@
 
 var fs = require('fs');
 var path = require('path');
+var hdb = null;
 
 var hooks = {
   afterEditorFormBlocks: function (blocks, json, abe) {
@@ -42,6 +43,19 @@ var hooks = {
     }
 
     return blocks;
+  },
+  afterHandlebarsHelpers: (Handlebars, abe) => {
+    hdb = Handlebars
+    return Handlebars
+  },
+  afterImport: function(res, file, conf, ctx, abe) {
+    if(file === 'engine' && hdb.helpers.getCurrentuserRole){
+      res = res.replace('text-i18n status-{{@root.json.abe_meta.status}}', 'text-i18n status-{{@root.json.abe_meta.status}} role-{{getCurrentuserRole this}}');
+    }
+    else if(file === 'engine'){
+      res = res.replace('text-i18n status-{{@root.json.abe_meta.status}}', 'text-i18n status-{{@root.json.abe_meta.status}} role-admin');
+    }
+    return res;
   }
 };
 
