@@ -5,9 +5,9 @@ var path = require('path');
 var hdb = null;
 
 var hooks = {
-  afterEditorFormBlocks: function (blocks, json, abe) {
+  afterEditorFormBlocks: function (blocks, json, text, abe) {
     var rex = /\{\{\{i18nAbe(.*?)lang \'(.*?)\'\}\}\}/g
-    var tpl = abe.cmsTemplates.template.getTemplate(json.abe_meta.template);
+    var tpl = text;
     var matches = tpl.match(rex);
     if(matches){
       var index = 0;
