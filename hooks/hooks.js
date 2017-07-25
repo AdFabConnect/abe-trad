@@ -6,7 +6,7 @@ var hdb = null;
 
 var hooks = {
   afterEditorFormBlocks: function (blocks, json, text, abe) {
-    var rex = /\{\{\{i18nAbe \'(.*?)\' \'(.*?)\'\}\}\}/g
+    var rex = /\{\{\{i18nAbe(.*?)lang \'(.*?)\'\}\}\}/g
     var tpl = text;
     var matches = tpl.match(rex);
     if(matches){
