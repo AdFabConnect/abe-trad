@@ -7,6 +7,9 @@ var hdb = null;
 var hooks = {
   afterEditorFormBlocks: function (blocks, json, text, abe) {
     var rex = /\{\{\{i18nAbe(.*?)lang \'(.*?)\'\}\}\}/g
+    if(abe.config && abe.config.regex) {
+      rex = new RegExp(abe.config.regex, 'g');
+    }
     var tpl = text;
     var matches = tpl.match(rex);
     if(matches){
