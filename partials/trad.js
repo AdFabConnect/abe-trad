@@ -1,4 +1,4 @@
-var lang = json.lang;
+var lang = typeof json.lang === 'string' ? json.lang : json.lang.value;
 
 var Trad = function (el) {
 	this.el = el;
