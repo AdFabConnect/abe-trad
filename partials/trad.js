@@ -12,9 +12,7 @@ var Trad = function (el) {
 Trad.prototype.bindEvt = function bindEvt () {
 	this.input.addEventListener('blur', function (e) {
 		var xhr = new XMLHttpRequest();
-		xhr.open('GET', '/abe/plugin/abe-trad/create?l=' + lang + '&k=' + encodeURIComponent(this.labelText) + '&v=' + encodeURIComponent(this.input.value));
-		xhr.send(null);
-
+		
 		xhr.onreadystatechange = function () {
 		  if (xhr.readyState === 4) {
 		    if (xhr.status === 200) {
@@ -25,6 +23,9 @@ Trad.prototype.bindEvt = function bindEvt () {
 		    }
 		  }
 		};
+
+		xhr.open('GET', '/abe/plugin/abe-trad/create?l=' + lang + '&k=' + encodeURIComponent(this.labelText) + '&v=' + encodeURIComponent(this.input.value));
+		xhr.send(null);
 
 	}.bind(this));
 }
