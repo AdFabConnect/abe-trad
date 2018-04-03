@@ -19,7 +19,7 @@ var hooks = {
       var jsonData = abe.cmsData.file.get(path.join(abe.config.root, 'locales', (typeof json.lang === 'string' ? json.lang : json.lang.value) + '.json'));
       matches.forEach(function (match) {
         var value = match.replace(rex, '$2').replace(/\\'/g, "'");
-        if(isAlreadyAdded.indexOf(value) < 1) {
+        if(isAlreadyAdded.indexOf(value) < 0) {
           isAlreadyAdded.push(value);
           blocks['i18n']['i18n_' + index++] = [{
             "type": "text",
