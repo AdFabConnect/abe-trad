@@ -31,7 +31,7 @@ Trad.prototype.bindEvt = function bindEvt () {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-  var els = document.querySelectorAll('.tab-pane#i18n .form-group');
+  var els = document.querySelectorAll('.tab-pane#i18n .form-control');
   if(typeof els === 'undefined' || els === null) return;
 
   Array.prototype.forEach.call(els, function (el) {
