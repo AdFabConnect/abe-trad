@@ -35,6 +35,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   if(typeof els === 'undefined' || els === null) return;
 
   Array.prototype.forEach.call(els, function (el) {
-  	new Trad(el);
+  	new Trad(el.parentNode);
   });
 });
