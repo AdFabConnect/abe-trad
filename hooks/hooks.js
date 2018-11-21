@@ -34,7 +34,7 @@ var hooks = {
             "reload": false,
             "order": "",
             "required": "",
-            "editable": false,
+            "editable": true,
             "visible": "",
             "block": "",
             "autocomplete": "",
